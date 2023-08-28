@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsc.fln.controller.FXMLAchorPaneCadastroModeloController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="6.0" prefHeight="400.0" prefWidth="593.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="tableViewModelo" prefHeight="398.0" prefWidth="173.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tableColumnModeloDescricao" prefWidth="172.0" text="Descrição" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="152.0" layoutY="14.0" text="Detalhes do modelo" />
+                  <GridPane layoutX="71.0" layoutY="52.0" prefHeight="102.0" prefWidth="273.0" AnchorPane.bottomAnchor="244.0" AnchorPane.rightAnchor="68.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="138.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="135.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="135.0" text="Id: " />
+                        <Label prefHeight="17.0" prefWidth="139.0" text="Descrição: " GridPane.rowIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="138.0" text="Marca: " GridPane.rowIndex="2" />
+                        <Label fx:id="lbId" prefHeight="17.0" prefWidth="0.0" GridPane.columnIndex="1" />
+                        <Label fx:id="lbDescricao" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="lbMarca" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label prefHeight="9.0" prefWidth="138.0" text="Categoria:" GridPane.rowIndex="3" />
+                        <Label fx:id="lbModeloCategoria" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+                  <Separator layoutX="65.0" layoutY="169.0" prefHeight="4.0" prefWidth="332.0" />
+                  <GridPane layoutX="92.0" layoutY="179.0" prefHeight="108.0" prefWidth="260.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="119.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="109.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="TOP_CENTER" graphicTextGap="0.0" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="170.0" text="Detalhes do Motor" GridPane.columnSpan="2">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="94.0" text="Potencia do Motor:" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lbModeloMotorCombustivel" prefHeight="17.0" prefWidth="403.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="lbModeloMotorPotencia" prefHeight="17.0" prefWidth="403.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="94.0" text="Tipo de Combustível:" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <Group layoutX="209.0" layoutY="333.0">
+                     <children>
+                        <Button fx:id="btInserir" mnemonicParsing="false" onAction="#handleBtInserir" text="Inserir" />
+                        <Button fx:id="btAlterar" layoutX="64.0" mnemonicParsing="false" onAction="#handleBtAlterar" text="Alterar" />
+                        <Button fx:id="btExcluir" layoutX="136.0" mnemonicParsing="false" onAction="#handleBtRemover" text="Excluir" />
+                     </children>
+                  </Group>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
